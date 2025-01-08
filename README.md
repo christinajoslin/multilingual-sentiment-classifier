@@ -1,6 +1,6 @@
 # Multilingual-Sentiment-Classifier
 
-This repository contains an end-to-end Natural Language Processing (NLP) pipeline for multilingual sentiment analysis using the pre-trained BERT model `nlptown/bert-base-multilingual-uncased-sentiment`. he pipeline includes data preprocessing, model fine-tuning with Hugging Face's Trainer, and evaluation metrics. The fine-tuned model classifies text sentiment as negative, neutral, or positive, achieving a test accuracy of 77% and a test F1 score of 76%. Due to limited computational resources, the training process used only 84,000 examples (out of 1.26 million available) and took approximately 1 hour on a T4 GPU.
+This repository contains an end-to-end Natural Language Processing (NLP) pipeline for multilingual sentiment analysis using the pre-trained BERT model `nlptown/bert-base-multilingual-uncased-sentiment`. The pipeline includes data preprocessing, model fine-tuning with Hugging Face's Trainer, and evaluation metrics. The fine-tuned model classifies text sentiment as negative, neutral, or positive, achieving a test accuracy of 77% and a test F1 score of 76%. Due to limited computational resources, the training process used only 84,000 examples (out of 1.26 million available) and took approximately 1 hour on a T4 GPU.
 
 ## Features
 - **Data Preprocessing:** Filters datasets to target languages (English, Spanish, French, German), converts star ratings to sentiment polarity, and performs stratified sampling to maintain class balance.
@@ -10,6 +10,12 @@ This repository contains an end-to-end Natural Language Processing (NLP) pipelin
 - **Custom Callbacks:** Includes early stopping for optimal performance.
 - **Final Predictions:** Outputs predictions for test data in a structured CSV format.
 
+## Why `nlptown/bert-base-multilingual-uncased-sentiment?`
+This model is specifically designed for multilingual sentiment analysis and offers the following advantages:
+- **Multilingual Support:** Supports multiple languages, including English, Spanish, French, and German, making it well-suited for diverse datasets like the Amazon Reviews Corpus.
+- **Pre-Trained for Sentiment Analysis:** Fine-tuned for sentiment classification tasks, reducing the need for extensive retraining and ensuring reliable performance out of the box.
+- **Robust Contextual Understanding:** Leverages the BERT architecture for better handling of complex sentence structures and nuanced sentiments across different languages.
+
 ## Instructions
 1. Ensure you have the required libraries installed (`transformers`, `datasets`, `pandas`, `numpy`, `scikit-learn`).
 2. Place the training, validation, and test datasets (`train.csv`, `validation.csv`, `test.csv`) in the appropriate directory.
@@ -17,11 +23,11 @@ This repository contains an end-to-end Natural Language Processing (NLP) pipelin
 4. The final predictions will be saved in a CSV file in the specified output directory.
 
 ## Dependencies
-- transformers: For tokenization and fine-tuning the BERT model.
-- datasets: For handling datasets compatible with Hugging Face's Trainer.
-- pandas: For data manipulation and processing.
-- numpy: For numerical computations.
-- scikit-learn: For evaluation metrics such as accuracy, precision, recall, and F1-score.
+- `transformers`: For tokenization and fine-tuning the BERT model.
+- `datasets`: For handling datasets compatible with Hugging Face's Trainer.
+- `pandas`: For data manipulation and processing.
+- `numpy`: For numerical computations.
+- `scikit-learn`: For evaluation metrics such as accuracy, precision, recall, and F1-score.
 
 ## Notes
 - Ensure the file paths in the script match the locations of your datasets.
