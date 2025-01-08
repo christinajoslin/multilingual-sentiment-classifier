@@ -1,8 +1,8 @@
 # Multilingual-Sentiment-Classifier
 
-This repository contains an end-to-end Natural Language Processing (NLP) pipeline for multilingual sentiment analysis using the pre-trained BERT model `nlptown/bert-base-multilingual-uncased-sentiment`. The pipeline includes data preprocessing, model fine-tuning with Hugging Face's Trainer, and evaluation metrics. The fine-tuned model effectively classifies text sentiment as negative, neutral, or positive and achievs 
+This repository contains an end-to-end Natural Language Processing (NLP) pipeline for multilingual sentiment analysis using the pre-trained BERT model `nlptown/bert-base-multilingual-uncased-sentiment`. he pipeline includes data preprocessing, model fine-tuning with Hugging Face's Trainer, and evaluation metrics. The fine-tuned model classifies text sentiment as negative, neutral, or positive, achieving a test accuracy of 77% and a test F1 score of 76%. Due to limited computational resources, the training process used only 84,000 examples (out of 1.26 million available) and took approximately 1 hour on a T4 GPU.
 
-# # Features
+## Features
 - **Data Preprocessing:** Filters datasets to target languages (English, Spanish, French, German), converts star ratings to sentiment polarity, and performs stratified sampling to maintain class balance.
 - **Tokenization:** Prepares text data for the BERT model by applying padding, truncation, and a maximum length of 128 tokens.
 - **Model Fine-Tuning:** Utilizes `nlptown/bert-base-multilingual-uncased-sentiment` for sequence classification with custom training configurations.
@@ -29,7 +29,7 @@ This repository contains an end-to-end Natural Language Processing (NLP) pipelin
 - The `random_state = 42` is used throughout to ensure reproducibility.
 
 ## Author
-Christina 
+Christina Joslin  
 
 ## Acknowledgements
 - Data provided by the [Multilingual Amazon Reviews Corpus posted on Kaggle](https://www.kaggle.com/datasets/mexwell/amazon-reviews-multi).
